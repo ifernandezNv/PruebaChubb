@@ -9,6 +9,7 @@ window.onload = ()=>{
     datosPersonales.addEventListener('submit', validarDatos);
     escolaridad.classList.add('hidden');
     intereses.classList.add('hidden');
+    escolaridad.addEventListener('submit', validarEscolaridad);
     gsap.from(datosPersonales, {opacity: 0, duration: 1, y: -100});
 }
 
@@ -23,20 +24,40 @@ function validarDatos(e){
         mostrarAlerta('error', 'Todos los campos son obligatorios', document.querySelector('.contenido__alerta'))
         return;
     }
-    mostrarAlerta('success', 'Enviando Formulario', document.querySelector('.contenido__alerta'));
-    setTimeout(() => {
-        datosPersonales.reset();
-        gsap.from(datosPersonales, {opacity: 1, duration: 1, y: 100});
-        datosPersonales.classList.add('hidden');
-        escolaridad.classList.remove('hidden');
-        gsap.from(escolaridad, {opacity: 0, duration: 1, y: 100});
-    }, 3000);
-    
+    mostrarAlerta('success', 'Enviando Formulario...', document.querySelector('.contenido__alerta'));
+    mostrarAnimacion(datosPersonales, escolaridad);
 }
 
-// Función que muestra el siguiente formulario
-function mostrarSiguienteFormulario(){
-    console.log('Mostrando siguiente formulario');
+// Finción que valida el fomulario de Escolaridad
+function validarEscolaridad(e){
+    e.preventDefault();
+    const carreraInput = document.querySelector('#carrera');
+    const universidadInput = document.querySelector('#universidad');
+    const duracionInput = document.querySelector('#duracion');
+    if(carreraInput.value === '' || universidadInput.value === '' || duracionInput.value === ''){
+        mostrarAlerta('error','Todos los campos son obligatorios');
+        return;
+    }
+    mostrarAlerta('success', 'Enviando Datos...');
+    mostrarAnimacion(escolaridad, intereses);
+}
+// Funcion para validad el formulario de Intereses
+function validarIntereses(e){
+    e.preventDefault();
+    // const dwa = document.querySelector('#');
+    // const dwa = document.querySelector('#');
+    // const dwa = document.querySelector('#');
+}
+
+// Función que muestra las animaciones
+function mostrarAnimacion(formularioActual, formularioSiguiente){
+    setTimeout(() => {
+        formularioActual.reset();
+        gsap.from(formularioActual, {opacity: 1, duration: 1, y: 100});
+        formularioActual.classList.add('hidden');
+        formularioSiguiente.classList.remove('hidden');
+        gsap.from(formularioSiguiente, {opacity: 0, duration: 1, y: 100});
+    }, 3000);
 }
 
 // Función que muestra alertas

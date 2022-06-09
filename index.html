@@ -15,7 +15,11 @@
     <main class="contenido">
         <h1 class="contenido__heading">Microforma</h1>
         <div class="contenido__contenedor">
-            <div class="contenido__progreso">Aquí va la barra de progreso</div>
+            <div class="contenido__progreso">
+                <img class="contenido__img contenido__img-bandera" src="./icons/bandera gris.png" alt="Bandera gris">
+                <img class="contenido__img contenido__img-nota" src="./icons/nota gris.png" alt="Bandera gris">
+                <img class="contenido__img contenido__img-dolar" src="./icons/dolar gris.png" alt="Bandera gris">
+            </div>
             <div class="contenido__alerta"></div>
             <form action="" class="personales__formulario">
                 <legend class="formulario__legend">Datos Personales</legend>
@@ -44,22 +48,28 @@
             <form action="" class="escolaridad__formulario">
                 <legend class="formulario__legend">Escolaridad</legend>
                 <div class="formulario__campo">
-                    <label for="nombre" class="formulario__label">Carrera Cursada: </label>
+                    <label for="carrera" class="formulario__label">Carrera Cursada: </label>
                     <input  type="text"
-                    id="nombre"
-                    placelholder="Tu Nombre..." class="formulario__input">
+                    id="carrera"
+                    placelholder="Administración.." class="formulario__input">
                 </div>
                 <div class="formulario__campo">
                     <label for="apellido" class="formulario__label">Universidad: </label>
                     <input  type="text"
-                    id="apellido"
-                    placelholder="Tu Apellido..." class="formulario__input">
+                    id="universidad"
+                    placelholder="Universidad..." class="formulario__input">
                 </div>
                 <div class="formulario__campo">
-                    <label for="email" class="formulario__label">Correo: </label>
-                    <input  type="email"
-                    id="email"
-                    placelholder="Tu Correo..." class="formulario__input">
+                    <label for="email" class="formulario__label">Duración de la carrera: </label>
+                    <select name="duracion" id="duracion">
+                        <option disabled selected value="">-- Seleccione --</option>
+                        <option value="1">1 Año</option>
+                        <option value="2">2 Años</option>
+                        <option value="3">3 Años</option>
+                        <option value="4">4 Años</option>
+                        <option value="5">5 Años</option>
+                        <option value="6">6 Años</option>
+                    </select>
                 </div>
                 <button type="submit" class="formulario__boton">Siguiente</button>
             </form>
@@ -85,12 +95,15 @@
                     id="email"
                     placelholder="Tu Correo..." class="formulario__input">
                 </div>
-                <button type="submit" class="formulario__boton">Enviar</button>
+                <button type="submit" class="formulario__boton">Enviar Información</button>
             </form>
             <!-- Fin del formulario de Intereses -->
         </div>
     </main>
 
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/e9cdd90a16.js" crossorigin="anonymous"></script>
     <script src="./JS/gsap.min.js"></script>
     <script src="./JS/app.js"></script>
 </body>

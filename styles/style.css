@@ -6,6 +6,7 @@
     --negro: rgb(26, 25, 25);
     --gris: rgb(238, 234, 234);
     --blanco: #fff;
+    --grisIcon : #ADB4BA;
 }
 /* Globales */
 *{
@@ -34,8 +35,8 @@ main{
 [class$="__contenedor"]{
     max-width: 120rem;
     width: 90%;
-    margin: 0 auto;
-    padding: 5rem 0;
+    margin: 1rem auto;
+    padding: 3rem 0;
 }
 [class$="__formulario"]{
     display: flex;
@@ -67,6 +68,12 @@ button:hover{
     cursor: pointer;
     background-color: #457004;
 }
+img{
+    width: 100%;
+    max-width: 1.6rem;
+    height: auto;
+}
+/* Utilidades */
 .hidden{
     display: none;
 }
@@ -90,6 +97,21 @@ button:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.contenido__progreso{
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+@media (min-width: 992px) { 
+    .contenido__progreso{
+        max-width: 80%;
+    }
+}
+.contenido__img{
+    
 }
 .contenido__heading{
     text-align: center;
