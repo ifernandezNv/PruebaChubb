@@ -34,9 +34,8 @@ main{
 }
 [class$="__contenedor"]{
     max-width: 120rem;
-    width: 90%;
-    margin: 1rem auto;
-    padding: 3rem 0;
+    width: 80%;
+    margin: 0 auto;
 }
 [class$="__formulario"]{
     display: flex;
@@ -75,7 +74,6 @@ img{
 }
 i{
     font-size: 2.5rem;
-    color: var(--grisIcon);
 }
 /* Utilidades */
 .hidden{
@@ -101,10 +99,12 @@ i{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    overflow: hidden;
 }
 .contenido__progreso{
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 1rem;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -116,10 +116,11 @@ i{
     position: absolute;
     background-color: var(--grisDesactivado);
     top: 50%;
-    left: 0;
+    left: 10;
+    text-align: center;
     transform: translateY(-50%);
     height: .2rem;
-    width: 100%;
+    width: 80%;
     z-index: -1;
     transition: .4s ease;
 }
@@ -149,16 +150,20 @@ i{
     position: absolute;
     background-color: var(--verde);
     top: 50%;
-    left: 0;
+    left: 15;
     transform: translateY(-50%);
     height: .5rem;
     width: 0%;
+    max-width: 90%;
     z-index: -1;
     transition: .4s ease;
 }
 @media (min-width: 992px) { 
     .contenido__progreso{
         max-width: 80%;
+    }
+    .contenido__avance{
+        max-width: 90%;
     }
 }
 .contenido__icono-activo{
@@ -167,6 +172,7 @@ i{
 .contenido__heading{
     text-align: center;
     color: var(--blanco);
+    margin: 0 0 1rem 0;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -174,21 +180,31 @@ i{
 .formulario__legend{
     text-align: center;
     text-transform: uppercase;
+    color: var(--azul);
     font-weight: 500;
+}
+.formulario__span{
+    color: var(--negro);
 }
 .formulario__campo{
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
 }
 .formulario__label{
     font-weight: 400;
+    font-size: 1.5rem;
 }
 .formulario__input{
-    width: 70%;
+    width: 70%
 }
 @media (min-width: 992px) { 
     .formulario__input{
         width: 80%;
     }
+}
+.contenido__despedida{
+    text-align: center;
+    color: var(--blanco);
 }

@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Microforma</title>
+    <title>MICROFORMAS</title>
 </head>
 <body>
     <main class="contenido">
-        <h1 class="contenido__heading">Microforma</h1>
+        <h1 class="contenido__heading">MICROFORMAS</h1>
         <div class="contenido__contenedor">
             <div class="contenido__progreso">
                 <div class="contenido__avance"></div>
@@ -32,7 +32,7 @@
             </div>
             <div class="contenido__alerta"></div>
             <form action="" class="personales__formulario">
-                <legend class="formulario__legend">Datos Personales</legend>
+                <legend class="formulario__legend">Paso 1:  <span class="formulario__span">Datos Personales</span></legend>
                 <div class="formulario__campo">
                     <label for="nombre" class="formulario__label">Nombre: </label>
                     <input  type="text"
@@ -56,7 +56,7 @@
             <!-- Fin del formulario de Escolaridad -->
 
             <form action="" class="escolaridad__formulario">
-                <legend class="formulario__legend">Escolaridad</legend>
+                <legend class="formulario__legend">Paso 2: <span class="formulario__span">Universidad</span></legend>
                 <div class="formulario__campo">
                     <label for="carrera" class="formulario__label">Carrera Cursada: </label>
                     <input  type="text"
@@ -71,7 +71,7 @@
                 </div>
                 <div class="formulario__campo">
                     <label for="email" class="formulario__label">Duración de la carrera: </label>
-                    <select name="duracion" id="duracion">
+                    <select name="duracion" id="duracion" class="formulario__input">
                         <option disabled selected value="">-- Seleccione --</option>
                         <option value="1">1 Año</option>
                         <option value="2">2 Años</option>
@@ -86,28 +86,31 @@
             <!-- Fin del formulario de Intereses -->
 
             <form action="" class="intereses__formulario">
-                <legend class="formulario__legend">Intereses</legend>
+                <legend class="formulario__legend">Pason 3: <span class="formulario__span">Intereses</span></legend>
                 <div class="formulario__campo">
-                    <label for="nombre" class="formulario__label">Nombre: </label>
+                    <label for="deporte" class="formulario__label">Deporte Favorito: </label>
                     <input  type="text"
-                    id="nombre"
-                    placelholder="Tu Nombre..." class="formulario__input">
+                    id="deporte"
+                    placelholder="Futbol..." class="formulario__input">
                 </div>
                 <div class="formulario__campo">
-                    <label for="apellido" class="formulario__label">Apellido: </label>
+                    <label for="artista" class="formulario__label">Artista que Admiras: </label>
                     <input  type="text"
-                    id="apellido"
-                    placelholder="Tu Apellido..." class="formulario__input">
+                    id="artista"
+                    placelholder="Un cantante..." class="formulario__input">
                 </div>
                 <div class="formulario__campo">
-                    <label for="email" class="formulario__label">Correo: </label>
-                    <input  type="email"
-                    id="email"
-                    placelholder="Tu Correo..." class="formulario__input">
+                    <label for="deportista" class="formulario__label">Deportista que más te Agrada: </label>
+                    <input type="text"
+                    id="deportista"
+                    placelholder="Algún futbolista..." class="formulario__input">
                 </div>
                 <button type="submit" class="formulario__boton">Enviar Información</button>
             </form>
             <!-- Fin del formulario de Intereses -->
+            <div class="contenido__fin">
+                <h2 class="contenido__despedida">Felicidades!!! haz completado el formulario</h2>
+            </div>
         </div>
     </main>
 
