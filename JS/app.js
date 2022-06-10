@@ -2,6 +2,10 @@
 const datosPersonales = document.querySelector('.personales__formulario');
 const escolaridad = document.querySelector('.escolaridad__formulario');
 const intereses = document.querySelector('.intereses__formulario');
+const avance = document.querySelector('.contenido__avance')
+const iconos = document.querySelectorAll('.contenido__icono');
+
+let iconoActivo = 0;
 
 const divAlerta = document.querySelector('.contenido__alerta');
 // Event Listeners
@@ -47,16 +51,23 @@ function validarIntereses(e){
     // const dwa = document.querySelector('#');
     // const dwa = document.querySelector('#');
     // const dwa = document.querySelector('#');
+    // if(){
+        // campos vacíos
+    // }
+    borrarClases();
 }
 
 // Función que muestra las animaciones
 function mostrarAnimacion(formularioActual, formularioSiguiente){
+    iconoActivo++;
     setTimeout(() => {
         formularioActual.reset();
         gsap.from(formularioActual, {opacity: 1, duration: 1, y: 100});
         formularioActual.classList.add('hidden');
         formularioSiguiente.classList.remove('hidden');
         gsap.from(formularioSiguiente, {opacity: 0, duration: 1, y: 100});
+        iconos[iconoActivo].classList.add('contenido__icono-activo');
+        avance.style.width = iconoActivo * 50 + "%";
     }, 3000);
 }
 
@@ -81,5 +92,13 @@ function mostrarAlerta(tipo, mensaje){
         }, 3000);
         return;
     }
-
+}
+// Función que borra las clases de activo
+function borrarClases(){
+    iconos.forEach((icono, idx) => {
+        if(iconoActivo != 0){
+            icono.classList.remove('contenido__avance');
+        }
+    })
+    iconoActivo = 0;
 }

@@ -6,7 +6,7 @@
     --negro: rgb(26, 25, 25);
     --gris: rgb(238, 234, 234);
     --blanco: #fff;
-    --grisIcon : #ADB4BA;
+    --grisDesactivado : #ADB4BA;
 }
 /* Globales */
 *{
@@ -73,6 +73,10 @@ img{
     max-width: 1.6rem;
     height: auto;
 }
+i{
+    font-size: 2.5rem;
+    color: var(--grisIcon);
+}
 /* Utilidades */
 .hidden{
     display: none;
@@ -104,14 +108,61 @@ img{
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 500000;
+}
+.contenido__progreso::before{
+    content: '';
+    position: absolute;
+    background-color: var(--grisDesactivado);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: .2rem;
+    width: 100%;
+    z-index: -1;
+    transition: .4s ease;
+}
+@media (min-width: 992px) { 
+    .contenido__progreso::before{
+        left: 28px;
+        width: 90%;
+    }
+}
+.contenido__icono{
+    background-color: var(--negro);
+    color: var(--gris);
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    border: 3px solid var(--grisDesactivado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease;
+}
+.contenido__icono-activo{
+    color: var(--verde);
+    border: 3px solid var(--verde);
+}
+.contenido__avance{
+    position: absolute;
+    background-color: var(--verde);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: .5rem;
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease;
 }
 @media (min-width: 992px) { 
     .contenido__progreso{
         max-width: 80%;
     }
 }
-.contenido__img{
-    
+.contenido__icono-activo{
+    color: var(--verde);
 }
 .contenido__heading{
     text-align: center;

@@ -7,18 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Document</title>
+    <title>Microforma</title>
 </head>
 <body>
     <main class="contenido">
         <h1 class="contenido__heading">Microforma</h1>
         <div class="contenido__contenedor">
             <div class="contenido__progreso">
-                <img class="contenido__img contenido__img-bandera" src="./icons/bandera gris.png" alt="Bandera gris">
-                <img class="contenido__img contenido__img-nota" src="./icons/nota gris.png" alt="Bandera gris">
-                <img class="contenido__img contenido__img-dolar" src="./icons/dolar gris.png" alt="Bandera gris">
+                <div class="contenido__avance"></div>
+                <div class="contenido__icono contenido__icono-activo">
+                    <i class="fa-brands fa-font-awesome"></i>
+                </div>
+
+                <div class="contenido__icono">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+
+                <div class="contenido__icono ">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
             </div>
             <div class="contenido__alerta"></div>
             <form action="" class="personales__formulario">
@@ -103,7 +113,6 @@
 
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/e9cdd90a16.js" crossorigin="anonymous"></script>
     <script src="./JS/gsap.min.js"></script>
     <script src="./JS/app.js"></script>
 </body>
